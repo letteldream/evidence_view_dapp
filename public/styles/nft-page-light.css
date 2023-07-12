@@ -1,0 +1,487 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@100;300;400;700;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,800&display=swap');
+
+/*Basic*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --colorPrimary: #FFF;
+    --colorPrimaryVariant: #f4f4f4;
+
+    --colorSecondary: #111;
+    --colorSecondaryVariant: #696969;
+
+    --colorTertiary: #00ad99;
+    --colorTertiaryVariant1: #00FFE1;
+    --colorTertiaryVariant2: #044a3e;
+}
+
+body {
+    display: grid;
+    height: fit-content;
+    width: 100%;
+}
+
+/* header {
+    height: 42vh;
+    padding: 0 max(5vw, 5vh);
+    width: 100%;
+    background: linear-gradient(to bottom, var(--colorSecondary), var(--colorSecondary) 70%, var(--colorTertiaryVariant2) 100%);
+} */
+/**Nav bar*/
+nav {
+    height: 42%;
+    max-width: 95%;
+    display: grid;
+    grid-template-columns: 6fr 27fr 7fr;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
+nav > h2 {
+    font-family: 'Montserrat';
+    font-size: clamp(2rem, 1.5rem + 1.8vw + 1vh, 4rem);
+    color: var(--colorTertiary);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: max(3.5vw, 2.5vh);
+}
+.nav-anchor {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-anchor a {
+    color: var(--colorPrimary);
+    font-family: 'Montserrat';
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.nav-anchor:hover {
+    cursor: pointer;
+}
+.nav-anchor img {
+    margin-left: 0.5vw;
+    height: 4ch;
+}
+
+.icons {
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: max(1.5vw, 1vh);
+}
+.icons img {
+    height: 55%;
+    aspect-ratio: 1/1;
+    width: auto;
+    cursor: pointer;
+}
+.separator {
+    width: 1px;
+    height: 70%;
+    background-color: var(--colorSecondaryVariant);
+}
+.icons span {
+    font-family: 'Montserrat';
+    font-size: 1.6rem;
+    color: var(--colorPrimary);
+    font-weight: 600;
+}
+
+/**Títulos*/
+.title-container h1 {
+    color: var(--colorPrimary);
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 3.6rem;
+    margin-bottom: 3vh;
+}
+.title-container h3 {
+    color: var(--colorPrimaryVariant);
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+
+/**Responsive menu*/
+.menu-dropdown {
+    margin-left: 5vw;
+    height: max(4rem, 4vh, 3vw);
+    aspect-ratio: 1/1;
+    width: auto;
+    background-image: url('/assets/nav-icons/menu-icon.svg');
+    background-size: cover;
+    position: relative;
+    display: none;
+}
+.menu-dropdown * {
+    user-select: none;
+}
+.menu-content {
+    display: none;
+    position: absolute;
+    background-color: var(--colorPrimary);
+    top: 100%;
+    right: 100%;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 3vh 4vh;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
+.menu-content li a {
+    width: 100%;
+    padding: 2vh;
+    font-family: 'Montserrat';
+    font-size: 1.5rem;
+}
+.menu-content li a:hover {
+    background-color: var(--colorPrimaryVariant);
+}
+
+/*!Main content*/
+main {
+    width: 100%;
+    height: fit-content;
+    font-family: 'Inter';
+    background-color: #f9f9f9;
+}
+.options-bar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    background-color: var(--colorPrimary);
+    padding: 2vh max(5vw, 5vh);
+    box-shadow: 0 4px 10px -10px var(--colorSecondary);
+}
+
+.search-bar {
+    background-color: var(--colorPrimaryVariant);
+    display: flex;
+    align-items: center;
+    gap: max(0.5vw, 0.5vh);
+    margin-right: max(3vw, 3vh);
+    padding: 1.8vh;
+    border-radius: 2px;
+}
+.search-bar img {
+    height: 3.5ch;
+    aspect-ratio: 1/1;
+    width: auto;
+}
+.search-bar input {
+    width: 30ch;
+    font-size: max(1.5vh, 1.2vw, 1.6rem);
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-family: 'Inter';
+}
+
+.options-bar > div:nth-child(2) {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.options-bar > div:nth-child(2) a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: max(0.6vw, 1vh);
+    font-size: max(1.5vh, 1.2vw, 1.6rem);
+    font-weight: 500;
+    text-align: center;
+    padding: 1.6vh;
+    color: var(--colorPrimary);
+    background-color: var(--colorTertiary);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.options-bar > div:nth-child(3) {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.options-bar > div:nth-child(3) span {
+    display: flex;
+    align-items: center;
+    font-size: max(1.5vh, 1.2vw, 1.6rem);
+    gap: max(0.6vw, 1vh);
+    font-weight: 400;
+    color: #078F7F;
+    cursor: pointer;
+}
+
+.main-nav{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: max(1.5vw, 1.5vh);
+    padding: max(2vw, 3vh) max(5vw, 5vh);
+    font-size: max(1.5vh, 1.2vw, 1.6rem);
+    border-bottom: 1px solid #C0C0C0;
+}
+.main-nav span:nth-child(1) {
+    color: #00D1B9;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+}
+.main-nav span:nth-child(2) {
+    color: #696969;
+    font-weight: 400;
+}
+
+.market {
+    padding: max(2vw, 3vh) max(5vw, 5vh);
+    min-width: 22%;
+    display: flex;
+    gap: max(2.5vw, 2.5vh);
+}
+.market-options {
+    display: flex;
+    flex-direction: column;
+}
+.marketplace-options, .status-options, .nft-options {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #A2A2A2;
+    gap: max(0.8vw, 1vh);
+}
+.nft-options {
+    border: none;
+}
+.market-options > div {
+    padding-bottom: max(1vw, 1.5vh);
+}
+.market-options h4 {
+    width: 100%;
+    font-size: max(1.5vh, 1.2vw, 1.6rem);
+    font-weight: 500;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.market-options h4 img {
+    justify-self: end;
+    font-size: max(1.5vh, 1.2vw, 1.6rem);
+    aspect-ratio: 1/1;
+    height: 4ch;
+    width: auto;
+    transform: rotate(180deg);
+}
+.selectable-options {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: max(1vw, 1.5vh);
+}
+.selectable-options span {
+    font-size: max(1.5vh, 1.2vw, 1.6rem);
+    font-weight: 500;
+    color: #5B5B5B;
+    background-color: #F2F2F2;
+    border: 1px solid #BABABA;
+    border-radius: 26px;
+    padding: max(0.8vw, 1vh) max(0.5vw, 0.8vh);
+}
+
+.price-options {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #A2A2A2;
+}
+.price-range {
+    margin-top: max(1vw, 1.5vh);
+    display: grid;
+    grid-template-columns: 3.7fr 1fr 3.7fr;
+    align-items: center;
+    gap: max(0.4vw, 0.6vh);
+}
+.price-range span {
+    width: 100%;
+    text-align: center;
+    font-size: max(1.5vh, 1.2vw, 1.6rem);
+    font-weight: 500;
+    color: #5B5B5B;
+}
+.price-range .number-input {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    font-size: max(1.5vh, 1.2vw, 1.6rem);
+    font-weight: 500;
+    background-color: #F2F2F2;
+    padding: max(1vw, 1.5vh) max(0.6vw, 0.8vh);
+}
+.price-range .number-input::placeholder {
+    font-family: 'Inter';
+    font-size: max(1.5vh, 1.2vw, 1.6rem);
+    font-weight: 500;
+    color: #5B5B5B;
+}
+.price-currency {
+    margin: max(2vw, 2vh) 0;
+    width: 100%;
+    color: #5B5B5B;
+    background-color: #F2F2F2;
+    gap: max(0.4vw, 0.6vh);
+}
+.price-currency .select {
+    padding: max(1vw, 1.5vh) max(0.6vw, 0.8vh);
+    font-size: max(1.5vh, 1.2vw, 1.6rem);
+    background-image: url('/assets/down-arrow.svg');
+    background-position: right;
+    background-size: 4ch;
+    background-repeat: no-repeat;
+    font-weight: 500;
+    cursor: pointer;
+}
+.apply-price-options {
+    width: 100%;
+    font-size: max(1.7vh, 1.4vw, 1.8rem);
+    color: var(--colorPrimary);
+    background-color: var(--colorTertiary);
+    text-align: center;
+    padding: max(0.8vw, 1vh) 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.nfts {
+    min-width: 72%;
+    max-height: 85vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: max(1vw, 1.5vh) max(0.6vw, 0.8vh);
+}
+.nft {
+    display: grid;
+    grid-template-rows: 7fr 2fr;
+    max-height: 45vh;
+    border-radius: 4px;
+    background-color: var(--colorPrimary);
+}
+.nft-image {
+    background-image: url('/assets/dummy.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 4px;
+}
+.nft-description {
+    padding: max(1vw, 1.5vh) max(0.8vw, 1vh);
+    display: flex;
+    flex-direction: column;
+    gap: max(1vw, 1.5vh);
+}
+.nft-description > span {
+    font-size: max(1.1vh, 0.8vw, 1.2rem);
+    font-weight: 500;
+}
+.nft-description > div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.nft-description > div span {
+    align-self: center;
+    font-size: max(1.1vh, 0.8vw, 1.2rem);
+    font-weight: 500;
+    color: #878787;
+}
+.nft-description > div h5 {
+    align-self: center;
+    justify-self: end;
+    font-size: max(1.5vh, 1.2vw, 1.6rem);
+    font-weight: 500;
+    color: #8A8A8A;
+}
+ 
+
+/*!Media queries*/
+
+@media only screen and (max-width: 1200px) {
+    nav{
+        grid-template-columns: 4fr 7fr;
+    }
+    .menu-dropdown{
+        display: inline-block;
+    }
+    #nav-links {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .search-bar input {
+        width: 20ch;
+    }
+    .nfts {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    nav {
+        gap: 2rem;
+    }
+    .nfts {
+        min-width: 60%;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    html{
+        font-size: 65%;
+    }
+    .nfts {
+        min-width: 50%;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    html{
+        font-size: 70%;
+    }
+    .options-bar {
+        padding: max(2vw, 2vh);
+        grid-template-columns: 1fr 1fr;
+        row-gap: max(3vw, 3.5vh);
+    }
+    .options-bar > div:nth-child(3) {
+        grid-column: 1 / 3;
+        justify-self: center;
+    }
+}
+@media only screen and (max-width: 450px) {
+    html{
+        font-size: 80%;
+    }
+}

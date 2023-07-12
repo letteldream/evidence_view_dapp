@@ -1,0 +1,398 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,800&display=swap');
+
+/*Basic*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    height: 100%;
+    width: 100%;
+}
+h1, h3 {
+    user-select: none;
+}
+
+:root {
+    --colorPrimary: #FFF;
+    --colorPrimaryVariant: #f4f4f4;
+
+    --colorSecondary: #111;
+    --colorSecondaryVariant: #696969;
+
+    --colorTertiary: #00ad99;
+    --colorTertiaryVariant1: #00FFE1;
+    --colorTertiaryVariant2: #044a3e;
+}
+
+body {
+    display: grid; 
+    grid-template-rows: 276fr 492fr;
+    height: fit-content;
+    width: 100%;
+}
+
+/* header {
+    height: 42vh;
+    padding: 0 max(5vw, 5vh);
+    width: 100%;
+    background: linear-gradient(to bottom, var(--colorSecondary), var(--colorSecondary) 70%, var(--colorTertiaryVariant2) 100%); */
+/* } */
+/**Nav bar*/
+nav {
+    height: 42%;
+    max-width: 95%;
+    display: grid;
+    grid-template-columns: 6fr 27fr 7fr;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
+.main-logo {
+    height: 50%;
+    aspect-ratio: 223/110;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: max(3.5vw, 2.5vh);
+}
+.nav-anchor {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-anchor a {
+    color: var(--colorPrimary);
+    font-family: 'Montserrat';
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.nav-anchor:hover {
+    cursor: pointer;
+}
+.nav-anchor img {
+    margin-left: 0.5vw;
+    height: 4ch;
+}
+
+.icons {
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: max(1.5vw, 1vh);
+}
+.icons img {
+    height: 55%;
+    aspect-ratio: 1/1;
+    width: auto;
+    cursor: pointer;
+}
+.separator {
+    width: 1px;
+    height: 70%;
+    background-color: var(--colorSecondaryVariant);
+}
+.icons span {
+    font-family: 'Montserrat';
+    font-size: 1.6rem;
+    color: var(--colorPrimary);
+    font-weight: 600;
+}
+
+/**Títulos*/
+.title-container h1 {
+    color: var(--colorPrimary);
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 3.6rem;
+    margin-bottom: 3vh;
+}
+.title-container h3 {
+    color: var(--colorPrimaryVariant);
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+
+/*!Main content*/
+main {
+    width: 100%;
+    height: fit-content;
+    background-color: var(--colorPrimaryVariant);
+}
+.options-bar{
+    display: grid;
+    grid-template-columns: 2fr 1fr 3fr;
+    align-items: center;
+    background-color: var(--colorPrimary);
+    padding: 2vh max(5vw, 5vh);
+    box-shadow: 0 4px 10px -10px var(--colorSecondary);
+}
+
+.search-bar {
+    background-color: var(--colorPrimaryVariant);
+    display: flex;
+    align-items: center;
+    gap: max(0.5vw, 0.5vh);
+    padding: 2vh;
+    margin-right: max(7vw, 7vh);
+}
+.search-bar img {
+    height: 3.5ch;
+    aspect-ratio: 1/1;
+    width: auto;
+}
+.search-bar input {
+    width: 30ch;
+    font-size: 1.6rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-family: 'Inter';
+}
+
+.history-config {
+    background-color: var(--colorPrimaryVariant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.9vh 1.5vh;
+    gap: max(1vw, 1.5vh);
+    margin-right: 2vw;
+}
+.history-config input[type="checkbox"] {
+    background-color: transparent;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    border: none;
+    width: 2ch;
+    height: 2ch;
+    outline: 1px solid #00D1B9;
+}
+.history-config span {
+    font-family: 'Inter';
+    font-size: 1.6rem;
+    color: var(--colorSecondaryVariant);
+    font-weight: 500;
+    white-space: nowrap;
+}
+.history-config img {
+    aspect-ratio: 1/1;
+    height: 5ch;
+}
+
+.filter-config {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: right;
+}
+.filter-config span{
+    font-family: 'Inter';
+    color: #078F7F;
+    font-size: 1.6rem;
+}
+.filter-config img {
+    aspect-ratio: 1/1;
+    height: 8ch;
+}
+
+/**Table of loans*/
+.loan-table{
+    display: flex;
+    flex-direction: column;
+}
+.table-head {
+    padding: 3vh max(5vw, 5vh);
+    display: grid;
+    grid-template-columns: 5fr 19fr 6fr 9fr;
+    gap: max(2vw, 1.5vh);
+}
+.table-head span{
+    font-family: 'Inter';
+    color: var(--colorSecondaryVariant);
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    justify-self: left;
+    align-items: center;
+}
+.table-head span img {
+    width: 2ch;
+    aspect-ratio: 1/1;
+    height: auto;
+}
+
+.table-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+}
+.loan {
+    display: grid;
+    grid-template-columns: 5fr 19fr 6fr 9fr;
+    align-items: center;
+    padding: 3vh max(5vw, 5vh);
+    background-color: var(--colorPrimary);
+    gap: max(2vw, 1.5vh);
+}
+
+.loan-number {
+    font-size: 2rem;
+    font-family: 'Inter';
+    font-weight: 400;
+    color: var(--colorSecondaryVariant);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--colorSecondaryVariant);
+    text-decoration-thickness: 1px;
+}
+
+.collateral {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 6vw;
+}
+.collateral .loan-icon {
+    aspect-ratio: 1/1;
+    width: 15ch;
+    border-radius: 50%;
+}
+.collateral .loan-description{
+    font-family: 'Inter';
+}
+.collateral .loan-description h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+.collateral .loan-description span {
+    font-size: 1.8rem;
+    color: var(--colorSecondaryVariant);
+    font-weight: 400;
+}
+
+.borrowing {
+    font-size: 2.5rem;
+    font-family: 'Inter';
+    font-weight: 400;
+}
+
+.duration {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+.duration h2 {
+    font-family: 'Inter';
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+.duration a {
+    justify-self: right;
+    font-family: 'Inter';
+    font-size: 1.8rem;
+    white-space: nowrap;
+    text-align: center;
+    background-color: var(--colorTertiary);
+    color: var(--colorPrimary);
+    padding: 1vh 1.5vh;
+    border-radius: 5px;
+}
+
+/**Responsive menu*/
+.menu-dropdown {
+    margin-left: 5vw;
+    height: max(4rem, 4vh, 3vw);
+    aspect-ratio: 1/1;
+    width: auto;
+    background-image: url('/assets/nav-icons/menu-icon.svg');
+    background-size: cover;
+    position: relative;
+    display: none;
+}
+.menu-dropdown * {
+    user-select: none;
+}
+.menu-content {
+    display: none;
+    position: absolute;
+    background-color: var(--colorPrimary);
+    top: 100%;
+    right: 100%;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 3vh 4vh;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
+.menu-content li a {
+    width: 100%;
+    padding: 2vh;
+    font-family: 'Montserrat';
+    font-size: 1.5rem;
+}
+.menu-content li a:hover {
+    background-color: var(--colorPrimaryVariant);
+}
+
+/*!Media queries*/
+
+@media only screen and (max-width: 1200px) {
+    nav{
+        grid-template-columns: 4fr 7fr;
+    }
+    .menu-dropdown{
+        display: inline-block;
+    }
+    .icons {
+        justify-content: center;
+    }
+    .icons img {
+        height: 60%;
+    }
+    #nav-links {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .icons img {
+        height: 70%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .icons img {
+        height: 85%;
+    }
+    .duration a {
+        white-space: normal;
+    }
+    .icons:nth-child(2) {
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    html{
+        font-size: 65%;
+    }
+}
+

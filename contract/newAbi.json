@@ -1,0 +1,190 @@
+[
+  {
+    "type": "constructor",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      { "type": "address", "name": "hub", "internalType": "address" },
+      { "type": "address", "name": "revokedRequestNonce", "internalType": "address" }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "CallerIsNotStatedBorrower",
+    "inputs": [{ "type": "address", "name": "", "internalType": "address" }]
+  },
+  {
+    "type": "error",
+    "name": "CallerIsNotStatedLender",
+    "inputs": [{ "type": "address", "name": "", "internalType": "address" }]
+  },
+  {
+    "type": "error",
+    "name": "CallerMissingHubTag",
+    "inputs": [{ "type": "bytes32", "name": "", "internalType": "bytes32" }]
+  },
+  { "type": "error", "name": "InvalidDuration", "inputs": [] },
+  { "type": "error", "name": "InvalidSignature", "inputs": [] },
+  {
+    "type": "error",
+    "name": "InvalidSignatureLength",
+    "inputs": [{ "type": "uint256", "name": "", "internalType": "uint256" }]
+  },
+  { "type": "error", "name": "NonceAlreadyRevoked", "inputs": [] },
+  { "type": "error", "name": "RequestExpired", "inputs": [] },
+  {
+    "type": "event",
+    "name": "RequestMade",
+    "inputs": [
+      { "type": "bytes32", "name": "requestHash", "internalType": "bytes32", "indexed": true },
+      { "type": "address", "name": "borrower", "internalType": "address", "indexed": true }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [{ "type": "uint32", "name": "", "internalType": "uint32" }],
+    "name": "MIN_LOAN_DURATION",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [
+      {
+        "type": "tuple",
+        "name": "loanTerms",
+        "internalType": "struct PWNLOANTerms.Simple",
+        "components": [
+          { "type": "address", "name": "lender", "internalType": "address" },
+          { "type": "address", "name": "borrower", "internalType": "address" },
+          { "type": "uint40", "name": "expiration", "internalType": "uint40" },
+          {
+            "type": "tuple",
+            "name": "collateral",
+            "internalType": "struct MultiToken.Asset",
+            "components": [
+              { "type": "uint8", "name": "category", "internalType": "enum MultiToken.Category" },
+              { "type": "address", "name": "assetAddress", "internalType": "address" },
+              { "type": "uint256", "name": "id", "internalType": "uint256" },
+              { "type": "uint256", "name": "amount", "internalType": "uint256" }
+            ]
+          },
+          {
+            "type": "tuple",
+            "name": "asset",
+            "internalType": "struct MultiToken.Asset",
+            "components": [
+              { "type": "uint8", "name": "category", "internalType": "enum MultiToken.Category" },
+              { "type": "address", "name": "assetAddress", "internalType": "address" },
+              { "type": "uint256", "name": "id", "internalType": "uint256" },
+              { "type": "uint256", "name": "amount", "internalType": "uint256" }
+            ]
+          },
+          { "type": "uint256", "name": "loanRepayAmount", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "name": "createLOANTerms",
+    "inputs": [
+      { "type": "address", "name": "caller", "internalType": "address" },
+      { "type": "bytes", "name": "factoryData", "internalType": "bytes" },
+      { "type": "bytes", "name": "signature", "internalType": "bytes" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "pure",
+    "outputs": [{ "type": "bytes", "name": "", "internalType": "bytes" }],
+    "name": "encodeLoanTermsFactoryData",
+    "inputs": [
+      {
+        "type": "tuple",
+        "name": "request",
+        "internalType": "struct PWNSimpleLoanSimpleRequest.Request",
+        "components": [
+          { "type": "uint8", "name": "collateralCategory", "internalType": "enum MultiToken.Category" },
+          { "type": "address", "name": "collateralAddress", "internalType": "address" },
+          { "type": "uint256", "name": "collateralId", "internalType": "uint256" },
+          { "type": "uint256", "name": "collateralAmount", "internalType": "uint256" },
+          { "type": "address", "name": "loanAssetAddress", "internalType": "address" },
+          { "type": "uint256", "name": "loanAmount", "internalType": "uint256" },
+          { "type": "uint256", "name": "loanYield", "internalType": "uint256" },
+          { "type": "uint32", "name": "duration", "internalType": "uint32" },
+          { "type": "uint40", "name": "expiration", "internalType": "uint40" },
+          { "type": "address", "name": "borrower", "internalType": "address" },
+          { "type": "address", "name": "lender", "internalType": "address" },
+          { "type": "uint256", "name": "nonce", "internalType": "uint256" }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [{ "type": "bytes32", "name": "", "internalType": "bytes32" }],
+    "name": "getRequestHash",
+    "inputs": [
+      {
+        "type": "tuple",
+        "name": "request",
+        "internalType": "struct PWNSimpleLoanSimpleRequest.Request",
+        "components": [
+          { "type": "uint8", "name": "collateralCategory", "internalType": "enum MultiToken.Category" },
+          { "type": "address", "name": "collateralAddress", "internalType": "address" },
+          { "type": "uint256", "name": "collateralId", "internalType": "uint256" },
+          { "type": "uint256", "name": "collateralAmount", "internalType": "uint256" },
+          { "type": "address", "name": "loanAssetAddress", "internalType": "address" },
+          { "type": "uint256", "name": "loanAmount", "internalType": "uint256" },
+          { "type": "uint256", "name": "loanYield", "internalType": "uint256" },
+          { "type": "uint32", "name": "duration", "internalType": "uint32" },
+          { "type": "uint40", "name": "expiration", "internalType": "uint40" },
+          { "type": "address", "name": "borrower", "internalType": "address" },
+          { "type": "address", "name": "lender", "internalType": "address" },
+          { "type": "uint256", "name": "nonce", "internalType": "uint256" }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "makeRequest",
+    "inputs": [
+      {
+        "type": "tuple",
+        "name": "request",
+        "internalType": "struct PWNSimpleLoanSimpleRequest.Request",
+        "components": [
+          { "type": "uint8", "name": "collateralCategory", "internalType": "enum MultiToken.Category" },
+          { "type": "address", "name": "collateralAddress", "internalType": "address" },
+          { "type": "uint256", "name": "collateralId", "internalType": "uint256" },
+          { "type": "uint256", "name": "collateralAmount", "internalType": "uint256" },
+          { "type": "address", "name": "loanAssetAddress", "internalType": "address" },
+          { "type": "uint256", "name": "loanAmount", "internalType": "uint256" },
+          { "type": "uint256", "name": "loanYield", "internalType": "uint256" },
+          { "type": "uint32", "name": "duration", "internalType": "uint32" },
+          { "type": "uint40", "name": "expiration", "internalType": "uint40" },
+          { "type": "address", "name": "borrower", "internalType": "address" },
+          { "type": "address", "name": "lender", "internalType": "address" },
+          { "type": "uint256", "name": "nonce", "internalType": "uint256" }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [{ "type": "bool", "name": "", "internalType": "bool" }],
+    "name": "requestsMade",
+    "inputs": [{ "type": "bytes32", "name": "", "internalType": "bytes32" }]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "revokeRequestNonce",
+    "inputs": [{ "type": "uint256", "name": "requestNonce", "internalType": "uint256" }]
+  }
+]

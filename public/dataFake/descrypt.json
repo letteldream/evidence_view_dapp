@@ -1,0 +1,61 @@
+{
+    "encryptedString": {
+        "type": "Buffer",
+        "data": [
+            37, 80, 68, 70, 45, 49, 46, 55, 13, 10, 37, 181, 181, 181, 181, 13, 10, 49, 32, 48, 32, 111, 98, 106, 13, 10, 60, 60, 47, 84, 121, 112, 101, 47, 67, 97, 116, 97, 108, 111, 103, 47, 80, 97, 103, 101, 115, 32, 50, 32, 48, 32, 82, 47, 76, 97, 110, 103, 40, 101, 110, 41, 32, 47, 83, 116, 114, 117, 99, 116, 84, 114, 101, 101, 82, 111, 111, 116, 32, 49, 48, 32, 48, 32, 82, 47, 77, 97, 114, 107, 73, 110, 102, 111, 60, 60, 47, 77, 97, 114, 107, 101, 100, 32, 116, 114, 117, 101, 62, 62, 47, 77, 101, 116, 97, 100, 97, 116, 97, 32, 50, 48, 32, 48, 32, 82, 47, 86, 105, 101, 119, 101, 114, 80, 114, 101, 102, 101, 114, 101, 110, 99, 101, 115, 32, 50, 49, 32, 48, 32, 82, 62, 62,
+        ]
+    },
+    "encryptedSymmetricKeyString": "c36346373b08a4f909c8174cf91f4b9352806b6fd997aecd170ad6f83473947817021c8675a8e7ab919b640059bc2119e31a7d4a2a3c180f2bd99fe27cec66aef5ac228fa8bc1bc3e834bfca92b7076f5345690ddd783c43a356b91116cf5686bb33d3d1c3628c422e912f2fb2db21c1147b3173f834b8621041d00ede72e397000000000000002081f1da961f4438c63df578d1749980ff5b7129a88bcc23297e2a930cc0fad0201c7506a6124d77c22e3e97c8157abf93",
+    "accessControlConditions": [
+        {
+            "contractAddress": "0xFCA41E9d8197Fbc0144B93d7D34240b0252b20A1",
+            "standardContractType": "ERC721",
+            "chain": "mumbai",
+            "method": "owner",
+            "parameters": [":userAddress"],
+            "returnValueTest": {
+                "comparator": "=",
+                "value": "0x32003009dF537795Bd25D67edF28923D5bd39687"
+            }
+        },
+        {
+            "operator": "or"
+        },
+        {
+            "contractAddress": "0xFCA41E9d8197Fbc0144B93d7D34240b0252b20A1",
+            "standardContractType": "ERC721",
+            "chain": "mumbai",
+            "method": "ownerOf",
+            "parameters": [
+                ":userAddress"
+            ],
+            "returnValueTest": {
+                "comparator": "=",
+                "value": "0x32003009dF537795Bd25D67edF28923D5bd39687"
+            }
+        },
+        {
+            "contractAddress": "0xFCA41E9d8197Fbc0144B93d7D34240b0252b20A1",
+            "standardContractType": "ERC721",
+            "chain": "mumbai",
+            "method": "ownerOf",
+            "parameters": [
+                ":userAddress"
+            ],
+            "returnValueTest": {
+                "comparator": "=",
+                "value": "0x32003009dF537795Bd25D67edF28923D5bd39687"
+            }
+        },
+        {
+            "operator": "or"
+        },
+        {
+            "returnValueTest": {
+                "comparator": "=",
+                "value": "0x32003009dF537795Bd25D67edF28923D5bd39687"
+            }
+        }
+    ],
+    "chain": "mumbai"
+}

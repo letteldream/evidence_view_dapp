@@ -1,0 +1,36 @@
+{
+    "name": "Celsius Test Claim 1",
+    "description": "Review the metadata for the legal agreements and evidence backing up this bankruptcy claim NFT with token ID 1 of collection ... on Chiado Testnet (EVM chain ID 10200).",
+    "image": "ipfs://QmfZWVq4NwUvK28XK5u5DiPtUc3xeMAyg1DGPFojFFhQbd",
+    "external_url": "https://cex.claims/",
+    "original_owner": "0x84D11C40Abab7F57A6A9F23D1C02E77D58559af6",
+    "filed_transfer_date": "2023-05-15",
+    "balance_details": {
+        "ETH": 1,
+        "BTC": 0.2
+    },
+    "notes": "",
+    "attributes": {
+        "estate": "Celsius Network LLC, et al.",
+        "case_no": "22-10964",
+        "schedule_no": {
+            "line": "3.1.000001",
+            "docket_no": 2311
+        },
+        "usd_face_value": 1000,
+        "claimant_country": "Canada",
+        "proof_language": "English",
+        "email_verification": true,
+        "id_verification": false,
+        "video_verification": false,
+        "notarization": false
+    },
+    "claim_public_proof": {
+        "notice_of_transfer": "https://cases.stretto.com/public/x191/11749/PLEADINGS/1174905102380000000050.pdf"
+    },
+    "claim_encrypted_proof": {
+        "verified_email": "ipfs://QmQdVzxJa35x3J473AnNEUJXyYrc1iefQpbAtdYsDqpRtZ",
+        "authenticated_agent_statement_email": "ipfs://QmQdVzxJa35x3J473AnNEUJXyYrc1iefQpbAtdYsDqpRtZ",
+        "assignment_of_claim": "ipfs://QmQdVzxJa35x3J473AnNEUJXyYrc1iefQpbAtdYsDqpRtZ"
+    }
+}
